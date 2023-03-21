@@ -20,6 +20,23 @@ fn main() {
     let mut martini_glass = '\u{1F378}'; // char
     println!("martini_glass: {}", martini_glass);
     println!("size of martini_glass: {}", size_of_val(&martini_glass));
+
+    // arrays
+    let arr1 = [1,2,3,4,5]; // inferred as [i32; 5]
+    println!("arr1 index 1 is: {}", arr1[1]);
+
+    let mut arr2: [u8; 3];
+    arr2 = [1,2,3];
+    println!("size of arr2 is: {}", size_of_val(&arr2));
+    // iterate with .iter()
+    for n in arr2.iter() {
+        println!("arr2 contains: {}", n);
+    }
+    arr2[1] = 9; // needs to be mutable (mut) to change elements
+    // another way to iterate
+    for i in 0..arr2.len()  {
+        println!("Now, arr2[{}] contains: {}", i, arr2[i]);
+    }
 }
 
 
