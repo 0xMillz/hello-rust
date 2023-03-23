@@ -37,6 +37,25 @@ fn main() {
     for i in 0..arr2.len()  {
         println!("Now, arr2[{}] contains: {}", i, arr2[i]);
     }
+
+    // vectors (allocated in the heap so they have dynamic size) has methods like .push(x) & .pop()
+    let mut vec1: Vec<i16> = Vec::new();
+    let vec2 = vec![1,2,3];
+    println!("Vector vec1's length is: {}", vec1.len());
+    println!("Vector vec2's length is: {}", vec2.len());
+    // add elements
+    vec1.push(4);
+    vec1.push(5);
+    vec1.push(6);
+    vec1.push(7);
+    println!("Now vector vec1's length is: {}", vec1.len());
+    println!("vec1: {:?}", &vec1);
+    for (i, x) in vec1.iter().enumerate(){
+        if i == 0 {
+            println!("Enumerating vec1 in loop:");
+        }
+        println!("index: {}, value: {}", i, x);
+    }
 }
 
 
